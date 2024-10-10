@@ -1,5 +1,5 @@
 function preload() {
-  myData = loadStrings("assets/cloudnames.txt");
+  myData = loadStrings("/assets/cloudnames.txt");
 }
 
 function cloud(x, y, size) {
