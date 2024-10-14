@@ -18,7 +18,7 @@ function cloud(x, y, size) {
   ellipse(x - 65, y + 25, size);
 
   if (betweenX && betweenY) {
-      text(phrase, x, y);
+    text(phrase, x, y);
   }
 }
 
@@ -72,6 +72,4 @@ function draw() {
     let x7pos = (5 * frameCount) / 2;
     cloud(x7pos % width, height / 1.6, 60);
   }
-
- 
 }
