@@ -61,6 +61,15 @@ noFill()
 
   push();
   noFill()
+  stroke(200)
+  rotate(secondAngle);
+  drawingContext.setLineDash([1, 50]);
+  strokeWeight(65);
+  arc(0, 0, 500, 500, 0, 360);
+  pop();
+
+  push();
+  noFill()
   rotate(secondAngle);
   drawingContext.setLineDash([1, 50]);
   strokeWeight(60);
