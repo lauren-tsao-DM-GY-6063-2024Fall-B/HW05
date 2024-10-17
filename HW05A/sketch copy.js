@@ -28,9 +28,8 @@ function draw() {
 
   // Draw the clock background
   noStroke();
-  noFill()
-  fill(87, 123, 193);
-  ellipse(0, 0, 500, 500);
+  fill(237, 34, 93);
+  ellipse(0, 0, 600, 600);
   
 
   // Calculate angle for each hand
@@ -40,65 +39,45 @@ function draw() {
 
   stroke(255);
 
-  push();
-  stroke(0, 9, 87)
-rotate(-90)
-drawingContext.setLineDash([1, 50]);
-strokeWeight(80);
-  arc(0, 0, 350, 350, 0, minuteAngle);
-  pop();
-
-  //seconds animation
+  // Second hand
   push();
   rotate(secondAngle);
-  rotate(60)
-noFill()
-  stroke(52, 76, 183)
-  drawingContext.setLineDash([1, 50]);
-  strokeWeight(60);
-  arc(0, 0, 450, 450, 0, 360);
-  pop();
-
-  push();
-  noFill()
-  rotate(secondAngle);
-  drawingContext.setLineDash([1, 50]);
+  drawingContext.setLineDash([1, 55]);
   strokeWeight(60);
   arc(0, 0, 500, 500, 0, 360);
   pop();
 
-  // push();
-  // noFill()
-  // rotate(-secondAngle);
-  // drawingContext.setLineDash([10, 50, 20, 30]);
-  // strokeWeight(5);
-  // arc(0, 0, 200, 200, 0, 360);
-  // pop();
-
-  // push();
-  // noFill()
-  // rotate(secondAngle);
-  // drawingContext.setLineDash([10, 50, 20, 30]);
-  // strokeWeight(3);
-  // arc(0, 0, 350, 350, 0, 360);
-  // pop();
-
-
-
-
-
-  //   push();
-  // strokeWeight(4);
-  // fill(255, 0, 0)
-  // rotate(hourAngle);
-  // line(0, 0, 0, -100);
-  // pop();
-
+ 
+  // Second hand
   push();
- noStroke()
-  fill(235, 230, 69)
+  rotate(secondAngle);
+  drawingContext.setLineDash([1, 10]);
+  strokeWeight(5);
+  arc(0, 0, 500, 500, 0, 360);
+  pop();
+
+    // Second hand
+    push();
+    fill(255)
+  noStroke()
+  rotate(-90)
+    arc(0, 0, 200, 200, 0, secondAngle);
+    pop();
+  
+
+  // // Minute hand
+  // push();
+  // fill(255)
+  // noStroke()
+  // rotate(-80);
+  // arc(0, 0, 80, 80, 0, -minuteAngle);
+  // pop();
+
+  // Hour hand
+  push();
+  strokeWeight(10);
   rotate(hourAngle);
-  ellipse(0, -100, 100, 100)
+  arc(50, 50, 80, 80, 0, hourAngle);
   pop();
   
 
