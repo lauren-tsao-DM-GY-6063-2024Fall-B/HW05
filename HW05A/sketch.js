@@ -1,39 +1,19 @@
-// Declare variables for shape radii
-let secondsRadius;
-let minutesRadius;
-let hoursRadius;
-let clockDiameter;
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   stroke(255);
   angleMode(DEGREES);
-
-  // Set radius for each shape based on canvas dimensions
-  let radius = height / 2;
-  secondsRadius = radius * 0.71;
-  minutesRadius = radius * 0.6;
-  hoursRadius = radius * 0.5;
-  clockDiameter = radius * 1.7;
-
-  describe('Functioning pink clock on a grey background.');
 }
 
 function draw() {
   background(230);
-  
-  
-  // Move origin to center of canvas
+
   translate(width / 2, height / 2);
 
-  // Draw the clock background
   noStroke();
-  noFill()
+  noFill();
   fill(87, 123, 193);
   ellipse(0, 0, 500, 500);
-  
 
-  // Calculate angle for each hand
   let secondAngle = map(second(), 0, 60, 0, 360);
   let minuteAngle = map(minute(), 0, 60, 0, 360);
   let hourAngle = map(hour(), 0, 12, 0, 360);
@@ -41,27 +21,58 @@ function draw() {
   stroke(255);
 
   push();
-  stroke(0, 9, 87)
-rotate(-90)
-drawingContext.setLineDash([1, 50]);
-strokeWeight(80);
-  arc(0, 0, 350, 350, 0, minuteAngle);
+  // stroke(0, 9, 87)
+  noStroke();
+  fill(0, 9, 87);
+  rotate(-90);
+  strokeWeight(80);
+  arc(0, 0, 420, 420, 0, hourAngle);
+  pop();
+
+  //stars row 1
+  push();
+  stroke(255);
+  drawingContext.setLineDash([1, 80]);
+  noFill();
+  rotate(-90);
+  strokeWeight(5);
+  arc(0, 0, 300, 300, 10, hourAngle);
+  pop();
+
+  //stars row 2
+  push();
+  stroke(255);
+  drawingContext.setLineDash([1, 80, 1, 50]);
+  noFill();
+  rotate(-90);
+  strokeWeight(5);
+  arc(0, 0, 200, 200, 5, hourAngle);
+  pop();
+
+  //stars row 3
+  push();
+  stroke(255);
+  drawingContext.setLineDash([1, 80, 1, 50]);
+  noFill();
+  rotate(-90);
+  strokeWeight(5);
+  arc(0, 0, 80, 80, 35, hourAngle);
   pop();
 
   //seconds animation
   push();
   rotate(secondAngle);
-  rotate(60)
-noFill()
-  stroke(52, 76, 183)
+  rotate(60);
+  noFill();
+  stroke(52, 76, 183);
   drawingContext.setLineDash([1, 50]);
   strokeWeight(60);
   arc(0, 0, 450, 450, 0, 360);
   pop();
 
   push();
-  noFill()
-  stroke(200)
+  noFill();
+  stroke(200);
   rotate(secondAngle);
   drawingContext.setLineDash([1, 50]);
   strokeWeight(65);
@@ -69,7 +80,7 @@ noFill()
   pop();
 
   push();
-  noFill()
+  noFill();
   rotate(secondAngle);
   drawingContext.setLineDash([1, 50]);
   strokeWeight(60);
@@ -92,10 +103,6 @@ noFill()
   // arc(0, 0, 350, 350, 0, 360);
   // pop();
 
-
-
-
-
   //   push();
   // strokeWeight(4);
   // fill(255, 0, 0)
@@ -104,13 +111,9 @@ noFill()
   // pop();
 
   push();
- noStroke()
-  fill(235, 230, 69)
-  rotate(hourAngle);
-  ellipse(0, -100, 100, 100)
+  noStroke();
+  fill(235, 230, 69);
+  rotate(minuteAngle);
+  ellipse(0, -100, 100, 100);
   pop();
-  
-
-
-  
 }
