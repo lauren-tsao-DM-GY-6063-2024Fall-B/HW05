@@ -14,19 +14,19 @@ function draw() {
   fill(87, 123, 193);
   ellipse(0, 0, 500, 500);
 
-  let secondAngle = map(second(), 0, 60, 0, 360);
-  let minuteAngle = map(minute(), 0, 60, 0, 360);
-  let hourAngle = map(hour(), 0, 12, 0, 360);
+  let sAngle = map(second(), 0, 60, 0, 360);
+  let mAngle = map(minute(), 0, 60, 0, 360);
+  let hAngle = map(hour(), 0, 12, 0, 360);
 
   stroke(255);
 
+  //day/night (hour hand)
   push();
-  // stroke(0, 9, 87)
   noStroke();
   fill(0, 9, 87);
   rotate(-90);
   strokeWeight(80);
-  arc(0, 0, 420, 420, 0, hourAngle);
+  arc(0, 0, 420, 420, 0, hAngle);
   pop();
 
   //stars row 1
@@ -36,7 +36,7 @@ function draw() {
   noFill();
   rotate(-90);
   strokeWeight(5);
-  arc(0, 0, 300, 300, 10, hourAngle);
+  arc(0, 0, 300, 300, 10, hAngle);
   pop();
 
   //stars row 2
@@ -46,7 +46,7 @@ function draw() {
   noFill();
   rotate(-90);
   strokeWeight(5);
-  arc(0, 0, 200, 200, 5, hourAngle);
+  arc(0, 0, 200, 200, 5, hAngle);
   pop();
 
   //stars row 3
@@ -56,12 +56,12 @@ function draw() {
   noFill();
   rotate(-90);
   strokeWeight(5);
-  arc(0, 0, 80, 80, 35, hourAngle);
+  arc(0, 0, 80, 80, 35, hAngle);
   pop();
 
-  //seconds animation
+  //blue cloud
   push();
-  rotate(secondAngle);
+  rotate(sAngle);
   rotate(60);
   noFill();
   stroke(52, 76, 183);
@@ -70,50 +70,30 @@ function draw() {
   arc(0, 0, 450, 450, 0, 360);
   pop();
 
+  //grey cloud
   push();
   noFill();
   stroke(200);
-  rotate(secondAngle);
+  rotate(sAngle);
   drawingContext.setLineDash([1, 50]);
   strokeWeight(65);
   arc(0, 0, 500, 500, 0, 360);
   pop();
 
+  //white cloud
   push();
   noFill();
-  rotate(secondAngle);
+  rotate(sAngle);
   drawingContext.setLineDash([1, 50]);
   strokeWeight(60);
   arc(0, 0, 500, 500, 0, 360);
   pop();
 
-  // push();
-  // noFill()
-  // rotate(-secondAngle);
-  // drawingContext.setLineDash([10, 50, 20, 30]);
-  // strokeWeight(5);
-  // arc(0, 0, 200, 200, 0, 360);
-  // pop();
-
-  // push();
-  // noFill()
-  // rotate(secondAngle);
-  // drawingContext.setLineDash([10, 50, 20, 30]);
-  // strokeWeight(3);
-  // arc(0, 0, 350, 350, 0, 360);
-  // pop();
-
-  //   push();
-  // strokeWeight(4);
-  // fill(255, 0, 0)
-  // rotate(hourAngle);
-  // line(0, 0, 0, -100);
-  // pop();
-
+  //sun/moon (minute hand)
   push();
   noStroke();
   fill(235, 230, 69);
-  rotate(minuteAngle);
+  rotate(mAngle);
   ellipse(0, -100, 100, 100);
   pop();
 }

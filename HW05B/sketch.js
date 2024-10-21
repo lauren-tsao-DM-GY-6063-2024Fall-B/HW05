@@ -44,7 +44,7 @@ function draw() {
   fill(252, 205, 42);
   ellipse(width / 7, height / 5, 200, 200);
 
-  //mountains
+  //mountain
   push();
   fill(192, 235, 166);
   triangle(width, height, width / 1.5, height / 2, width / 2, height);
@@ -56,7 +56,6 @@ function draw() {
   pop();
 
   //cloud generators
-
   if (m > 1000) {
     let x1pos = (0.9 * frameCount) / 2;
     cloud((x1pos % width) * 2, height / 1.2, 60, cloudNames[0], cloudAlphas[0]);
